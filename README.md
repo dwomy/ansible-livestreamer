@@ -10,8 +10,11 @@
 ### install livestreamer
 
 playbook.ymlを実行する。
-ローカル環境のvenvにlivestremer入れるような動きになってます。
-ほぼhttps://github.com/nibalizer/ansible-livestreamerを真似てるだけ。
+ローカル環境ユーザー作って、venvにlivestremer入れるような動きになってます。
+（Docker前提の作り）
+ほぼ
+https://github.com/nibalizer/ansible-livestreamer
+を真似てるだけ。
 
     ansible-playbook -i /etc/ansible/hosts playbook.yml -K
     source venv/local/bin/activate
