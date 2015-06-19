@@ -1,0 +1,34 @@
+---
+# /etc/ansible/hosts
+- hosts: 127.0.0.1
+  connection: local
+  sudo: yes
+  vars:
+    http_port: 80
+    max_clients: 200
+  remote_user: root
+  tasks:
+  - name: ensure python-dev is at the latest version
+    apt: pkg=python-dev state=latest
+  - name: ensure various packages are at latest version
+    apt: pkg=python-virtualenv state=latest
+  - name: ensure various packages are at latest version
+    apt: pkg=librtmp-dev state=latest
+  - name: ensure various packages are at latest version
+    apt: pkg=libffi-dev state=latest
+
+- hosts: 127.0.0.1
+  sudo: no
+  connection: local
+  vars:
+    http_port: 80
+    max_clients: 200
+    local_home: "{{ lookup('env','HOME') }}"
+  remote_user: koromaru
+  tasks:
+  - name: ensure various packages are at latest version
+    pip: name=cffi virtualenv=~/venv state=latest
+  - name: ensure various packages are at latest version
+    pip: name=python-librtmp virtualenv=~/venv state=latest
+  - name: ensure various packages are at latest version
+    pip: name=livestreamer virtualenv=~/venv state=latest
