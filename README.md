@@ -7,6 +7,21 @@
     apt-get update
     apt-get install ansible
 
+### install ffmpeg(Ubuntu14.04)
+
+動画加工とかしたい場合はこっちも
+
+```
+apt-get install ppa-purge
+ppa-purge ppa:jon-severinsson/ffmpeg
+
+add-apt-repository ppa:mc3man/trusty-media
+apt-get update
+apt-get dist-upgrade
+
+apt-get install ffmpeg
+```
+
 ### install livestreamer
 
 playbook.ymlを実行する。
