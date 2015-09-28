@@ -22,6 +22,8 @@ apt-get dist-upgrade
 apt-get install ffmpeg
 ```
 
+ffmpegの使い方参考 -> http://takuya-1st.hatenablog.jp/entry/20120225/1330189927
+
 ### install livestreamer
 
 playbook.ymlを実行する。
